@@ -6,7 +6,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	int		i;
 	int		j;
 	char	*tab;
-​
+
 	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)

@@ -22,15 +22,6 @@ void passargs(int n, ...)
 }
 
 int main(){
-	int i;
-	unsigned int j;
-	char *s = "pastel";
-
-	i = -1542343;
-	j = 4294967295 + i + 1;
-	printf("Eu quero comer %u  \n", j);
-	printf("Teste de novo %*p \n", 10, &i);
-	printf("Mais teste %-*s \n", 16, s);
-	passargs(5, "vou", "comer", s, 5, "testenovo");
-	ft_printf("coxinha");
+	char *c = "testando";
+	ft_printf("coxinha %.5s \n\n", c);
 }

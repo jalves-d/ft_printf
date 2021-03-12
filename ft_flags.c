@@ -11,14 +11,47 @@ int		*ft_intzero(int *str, int i)
 	return (str);
 }
 
-int	*strapplyflags(char *flags)
-{
-	int apply[5];
+void strapplynums(char *flags, int i, int *apply)
+{	
 	char *num;
+	int	*p;
+
+	num = (char*)malloc(sizeof(char) * 1);
+	if (flags[i] == '*')
+	{
+		apply[2] = -1;
+		i++;
+	}
+	else
+		while (ft_isdigit(flags[i]))
+		{
+			ft_charset(num, flags[i]);
+			i++;
+		}
+		if (num == 0)
+		{
+			apply[2] = ft_atoi(num);
+			ft_bzero(num, ft_strlen(num));
+		}
+	if(flags[i] == '.')
+	{
+		apply[3] = 1;
+		i++;
+		while(ft_isdigit(flags[i]))
+		{
+			ft_charset(num, flags[i]);
+			i++;
+		}
+		if (num[0] != 0)
+			apply[4] = ft_atoi(num);
+	}
+}
+
+void strapplyflags(char *flags, int *apply)
+{
 	int i;
 
 	i = 0;
-	apply = ft_intzero(apply, 3);
 	if (flags[i] == '-')
 	{
 		apply[0] = 1;
@@ -29,29 +62,25 @@ int	*strapplyflags(char *flags)
 		apply[1] = 1;
 		i++;
 	}
-	if (flags[i] == '*')
+	strapplynums(flags, i, apply);
+}
+
+int	*ft_na(int *nflags, char *flags, va_list list)
+{
+	int 	i;
+	int		*p;
+
+	i = 0;
+	while (i < 5)
 	{
-		apply[2] = -1;
+		nflags[i] = 0;
 		i++;
 	}
-	else
-		while(isdigit(flags[i]))
-		{
-			ft_straddend(num, flags[i]);
-			i++;
-		}
-		apply[2] = ft_atoi(num);
-		num = ft_intzero(num, ft_strlen(num));
-	if(flags[i] == '.')
-	{
-		apply[3] = 1;
-		i++;
-		while(isdigit(flags[i]))
-		{
-			ft_straddend(num, flags[i]);
-			i++;
-		}
-		apply[4] = ft_atoi(num);
-	}
-	return (apply);
+	strapplyflags(flags, nflags);
+	if (nflags[2] == -1)
+		nflags[2] = va_arg(list, int);
+	if (nflags[4] == -1)
+		nflags[4] = va_arg(list, int);
+	free(flags);
+	return (nflags);
 }
