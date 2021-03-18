@@ -1,3 +1,4 @@
+
 int		ft_checkflag(char c, char *cmp)
 {
 	while (*cmp)

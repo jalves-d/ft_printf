@@ -22,7 +22,7 @@ int		*ft_intzero(int *str, int i);
 char	*ft_itoa(long long nbr);
 char 	*widht(int size, char *str, int left);
 char 	*precisionapply(int size, char *str);
-char 	*executionflags(int *istr, char *str, char s);
+char 	*executionflags(int **isstr, char *str, char s);
 char 	*convertfunc(va_list list, char s, char *flags);
 char	*ft_puthex(u_int64_t nb, char c);
 char	*ft_straddend(char *str, char c);

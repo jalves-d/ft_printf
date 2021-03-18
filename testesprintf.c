@@ -23,5 +23,7 @@ void passargs(int n, ...)
 
 int main(){
 	char *c = "testando";
-	ft_printf("coxinha %.5s \n\n", c);
+	ft_printf("coxinha %u \n\n", 150);
+	ft_printf("coxinha %-*.5s \n\n", 5, c);
+	printf("%c" , 'c');
 }

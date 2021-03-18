@@ -38,14 +38,17 @@ char *precisionapply(int size, char *str)
 	{
 		p[i] = '0';
 		i++;
-	}	
+	}
 	p[i] = 0;
 	free(str);
 	return (p);
 }
 
-char *executionflags(int *istr, char *str, char s)
+char *executionflags(int **isstr, char *str, char s)
 {
+	int *istr;w
+
+	istr = *isstr;
 	if (s == 's')
 	{
 		if(istr[3] == 1 && istr[4] > 0)
@@ -65,14 +68,14 @@ char *convertfunc(va_list list, char s, char *flags)
 	int		*nflags;
 
 	str = 0;
-	nflags = (int*)malloc(sizeof(int) * 5);	
+	nflags = (int*)malloc(sizeof(int) * 5);
 	nflags = ft_na(nflags, flags, list);
 	if (s == 'c')
 		str = ft_charset(str, va_arg(list, int));
 	else if(s == 's')
 		str = ft_strjoin(str, va_arg(list, char*));
 	else if(s == 'p')
-		str = ft_strjoin("0x", ft_puthex((unsigned int)va_arg(list, void*), 'a'));
+		str = ft_strjoin("0x", ft_puthex(((unsigned long)va_arg(list, void*)), 'a'));
 	else if(s == 'd' || s == 'i')
 		str = ft_itoa(va_arg(list, int));
 	else if(s == 'u')
@@ -81,5 +84,5 @@ char *convertfunc(va_list list, char s, char *flags)
 		str = ft_puthex(va_arg(list, unsigned int), 'a');
 	else if(s == 'X')
 		str = ft_puthex(va_arg(list, unsigned int), 'A');
-	return (executionflags(nflags, str, s));
+	return (executionflags(&nflags, str, s));
 }
