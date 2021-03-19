@@ -6,7 +6,7 @@
 /*   By: jalves-d <jalves-d@42lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 11:07:33 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/05 16:50:38 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/03/19 15:29:10 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ char	*ft_itoa(long long nbr)
 	p = (char*)malloc(sizeof(char) * (nb + 1));
 	if (!p)
 		return (0);
-	p[nb--] = '\0';
+	p[nb] = '\0';
+	nb--;
 	if (nbr == 0)
 		p[0] = '0';
 	if (nbr < 0)

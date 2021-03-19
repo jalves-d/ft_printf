@@ -25,7 +25,7 @@ char 	*precisionapply(int size, char *str);
 char 	*executionflags(int **isstr, char *str, char s);
 char 	*convertfunc(va_list list, char s, char *flags);
 char	*ft_puthex(u_int64_t nb, char c);
-char	*ft_straddend(char *str, char c);
+char	*ft_straddend(char *str);
 char	*ft_strdup(char *src);
 char 	*ft_strev(char *str);
 char	*ft_strjoin(char *s1, char *s2);

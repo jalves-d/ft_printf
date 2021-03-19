@@ -11,13 +11,39 @@ int		*ft_intzero(int *str, int i)
 	return (str);
 }
 
+void applyprec(char *flags, int i, int *apply)
+{
+	char *numt;
+
+	numt = (char*)malloc(sizeof(char) * 1);
+	numt[0] = 0;
+	if(flags[i] == '.')
+	{
+		apply[3] = 1;
+		i++;
+		if (flags[i] == '*')
+		{
+			apply[2] = -1;
+			i++;
+		}
+		else
+			while(ft_isdigit(flags[i]))
+			{ 
+				numt = ft_charset(numt, flags[i]);
+				i++;
+			}
+			if (numt[0] != 0)
+				apply[4] = ft_atoi(numt);
+	}
+	free(numt);
+}
+
 void strapplynums(char *flags, int i, int *apply)
 {
 	char *num;
-	int	*p;
 
 	num = (char*)malloc(sizeof(char) * 1);
-	printf("%s", num);
+	num[0] = 0;
 	if (flags[i] == '*')
 	{
 		apply[2] = -1;
@@ -30,22 +56,8 @@ void strapplynums(char *flags, int i, int *apply)
 			i++;
 		}
 		if (num[0] != 0)
-		{
 			apply[2] = ft_atoi(num);
-			ft_bzero(num, ft_strlen(num));
-		}
-	if(flags[i] == '.')
-	{
-		apply[3] = 1;
-		i++;
-		while(ft_isdigit(flags[i]))
-		{
-			num = ft_charset(num, flags[i]);
-			i++;
-		}
-		if (num[0] != 0)
-			apply[4] = ft_atoi(num);
-	}
+	applyprec(flags, i, apply);
 	free(num);
 }
 
