@@ -45,11 +45,11 @@ char *prapply(int size, char *str)
 	char *p;
 	int i;
 
-	if(size >= ft_strlen(str))
+	if (size >= ft_strlen(str))
 		return (str);
 	i = 0;
 	p = (char*)malloc(sizeof(char) * (size + 1));
-	while(i < size)
+	while (i < size)
 	{
 		p[i] = str[i];
 		i++;

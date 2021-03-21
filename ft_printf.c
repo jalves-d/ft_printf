@@ -4,7 +4,7 @@
 void ft_putstr(char *str)
 {
 	int i;
-	
+
 	i = 0;
 	while(str[i])
 	{
@@ -27,7 +27,7 @@ int		checkpercent(char **str, const char *s, va_list list, int i)
 {
 	char *flasmem;
 	char *p;
-	
+
 	p = *str;
 	flasmem = (char*)malloc(sizeof(char) * 1);
 	ft_init(flasmem);
@@ -36,7 +36,7 @@ int		checkpercent(char **str, const char *s, va_list list, int i)
 		flasmem = ft_charset(flasmem, s[i]);
 		i++;
 	}
-	if(ft_checkflag(s[i], "cspdiuxX%"))
+	if (ft_checkflag(s[i], "cspdiuxX%"))
 		*str = ft_strjoin(p, convertfunc(list, s[i], flasmem));
 	else
 		return (-1);
@@ -54,12 +54,12 @@ int		ft_printf(const char *s, ...)
 	va_start(list, s);
 	while (s[i])
 	{
-		if(s[i] == '%')
+		if (s[i] == '%')
 		{
 			i++;
 			i = checkpercent(&str, s, list, i);
 			if (i == -1)
-				return (0);			
+				return (0);
 		}
 		else
 			str = ft_charset(str, s[i]);

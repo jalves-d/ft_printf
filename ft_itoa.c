@@ -6,7 +6,7 @@
 /*   By: jalves-d <jalves-d@42lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 11:07:33 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/19 15:29:10 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/03/21 15:49:20 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_itoa(long long nbr)
 		p[0] = '-';
 	if (nbr < 0)
 		nbr = nbr * -1;
-	while (nb > 0)
+	while (nbr > 0)
 	{
 		p[nb] = (nbr % 10) + '0';
 		nbr = nbr / 10;

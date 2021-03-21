@@ -25,6 +25,6 @@ int main(){
 	char *c;
 
 	c = "josenicacio";
-	ft_printf("%8.5d \n", 123);
-	printf("%8.5d", 123);
+	ft_printf("%8.6d \n", -123);
+	printf("%8.6d", -123);
 }

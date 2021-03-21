@@ -3,7 +3,7 @@
 
 int		*ft_intzero(int *str, int i)
 {
-	while(i >= 0)
+	while (i >= 0)
 	{
 		str[i] = 0;
 		i--;
@@ -27,8 +27,8 @@ void applyprec(char *flags, int i, int *apply)
 			i++;
 		}
 		else
-			while(ft_isdigit(flags[i]))
-			{ 
+			while (ft_isdigit(flags[i]))
+			{
 				numt = ft_charset(numt, flags[i]);
 				i++;
 			}
@@ -50,6 +50,7 @@ void strapplynums(char *flags, int i, int *apply)
 		i++;
 	}
 	else
+	{
 		while (ft_isdigit(flags[i]))
 		{
 			num = ft_charset(num, flags[i]);
@@ -57,6 +58,7 @@ void strapplynums(char *flags, int i, int *apply)
 		}
 		if (num[0] != 0)
 			apply[2] = ft_atoi(num);
+	}
 	applyprec(flags, i, apply);
 	free(num);
 }
@@ -82,7 +84,6 @@ void strapplyflags(char *flags, int *apply)
 int	*ft_na(int *nflags, char *flags, va_list list)
 {
 	int 	i;
-	int		*p;
 
 	i = 0;
 	while (i < 5)
