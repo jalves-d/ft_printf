@@ -18,10 +18,12 @@ typedef struct	s_flags
 }				t_flags;
 
 void	strapplyflags(char *flags, int *apply);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		*ft_intzero(int *str, int i);
 char	*ft_itoa(long long nbr);
 char 	*widht(int size, char *str, int left);
 char 	*precisionapply(int size, char *str);
+char	*prapplyig(int size, char *str);
 char 	*executionflags(int **isstr, char *str, char s);
 char 	*convertfunc(va_list list, char s, char *flags);
 char	*ft_puthex(u_int64_t nb, char c);

@@ -23,8 +23,10 @@ void passargs(int n, ...)
 
 int main(){
 	char *c;
+	char *d;
 
+	d = "jfijlgk";
 	c = "josenicacio";
-	ft_printf("%8.6d \n", -123);
-	printf("%8.6d", -123);
+	ft_printf("%.16s e %015u\n", c, -1513132);
+	printf("%.16s e %015u", c, -1513132);
 }

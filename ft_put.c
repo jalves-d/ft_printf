@@ -27,6 +27,32 @@ char *precisionapply(int size, char *str)
 	return (p);
 }
 
+char *prapplyig(int size, char *str)
+{
+	char *p;
+	int i;
+	int check;
+
+	i = -1;
+	check = 0;
+	p = (char*)malloc(sizeof(char) * ((size - ft_strlen(str)) + 1));
+	if (size > ft_strlen(str))
+	{
+		if (str[0] == '-')
+			check = 1;
+		if (str[0] == '-')
+			str[0] = '0';
+	}
+	while(i++ < (size - ft_strlen(str)) + check - 1)
+		p[i] = '0';
+	p[i] = 0;
+	p = ft_strjoin(p, str);
+	if (check == 1)
+		p[0] = '-';
+	free(str);
+	return (p);
+}
+
 char *executionflags(int **isstr, char *str, char s)
 {
 	int *istr;
@@ -35,12 +61,14 @@ char *executionflags(int **isstr, char *str, char s)
 	if (s == 's')
 		if(istr[3] == 1 && istr[4] > 0)
 			str = prapply(istr[4], str);
-	if (s == 'd')
+	if (s == 'd' || s == 'i' || s == 'x' || s == 'X' || s == 'u' || s == 'p')
 	{
 		if (istr[3] == 1 && istr[4] > 0)
-			str = precisionapply(istr[4], str);
+			if (istr[4] > ft_strlen(str))
+				str = prapplyig(istr[4], str);
 		if (istr[1] == 1 && istr[3] == 0 && istr[0] == 0)
-		   str = precisionapply(istr[2], str);
+			if(istr[2] > 0 && istr[2] > ft_strlen(str))
+		   		str = precisionapply(istr[2], str);
 	}
 	if (istr[2] > 0 && istr[1] == 0)
 		str = swidht(istr[2], str, istr[0]);
