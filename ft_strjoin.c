@@ -7,8 +7,8 @@ char	*ft_strjoin(char *s1, char *s2)
 	int		j;
 	char	*tab;
 
-	if (!s1 && !s2)
-		return (NULL);
+	if (s2 == NULL)
+		return (ft_strdup("(null)"));
 	if (!s1)
 		return (ft_strdup(s2));
 	i = ft_strlen(s1) + ft_strlen(s2) + 1;

@@ -1,4 +1,13 @@
 
+
+unsigned int ft_uns(int i) 
+{
+	if (i > 0)
+		return (i);
+	else 
+		return (4294967295 + i + 1);
+}
+
 int		ft_checkflag(char c, char *cmp)
 {
 	while (*cmp)

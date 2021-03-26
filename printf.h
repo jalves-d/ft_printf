@@ -6,17 +6,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-typedef struct	s_flags
-{
-	int			minus;
-	int			zero;
-	int			star;
-	int			min_width;
-	int			point;
-	int			precision;
-	char		type;
-}				t_flags;
-
+unsigned int		ft_uns(int i);
 void	strapplyflags(char *flags, int *apply);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		*ft_intzero(int *str, int i);

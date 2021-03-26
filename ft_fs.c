@@ -7,6 +7,8 @@ char *ft_charset(char *str, char s)
 	char *p;
 
 	i = 0;
+	if (s == '\0')
+		s = 127;
 	if (str != NULL)
 	{
 		p = (char*)malloc(sizeof(char) * (ft_strlen(str) + 2));

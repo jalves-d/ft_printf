@@ -23,7 +23,7 @@ void applyprec(char *flags, int i, int *apply)
 		i++;
 		if (flags[i] == '*')
 		{
-			apply[2] = -1;
+			apply[4] = -1;
 			i++;
 		}
 		else
@@ -68,6 +68,8 @@ void strapplyflags(char *flags, int *apply)
 	int i;
 
 	i = 0;
+	if (flags[i] == '0' && flags[i + 1] == '-')
+		i++;
 	while (flags[i] == '-')
 	{
 		apply[0] = 1;
@@ -93,9 +95,14 @@ int	*ft_na(int *nflags, char *flags, va_list list)
 	}
 	strapplyflags(flags, nflags);
 	if (nflags[2] == -1)
+	{
 		nflags[2] = va_arg(list, int);
+		if (nflags[2] < 0)
+			nflags[0] = 1;
+		if (nflags[2] < 0)
+			nflags[2] *= -1;
+	}
 	if (nflags[4] == -1)
 		nflags[4] = va_arg(list, int);
-	free(flags);
 	return (nflags);
 }

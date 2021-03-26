@@ -9,6 +9,11 @@ char	*ft_puthex(u_int64_t nb, char c)
 
 	hex = (char*)malloc(sizeof(char) * 17);
 	i = 0;
+	if (nb == 0)
+	{
+		hex[i] = '0';
+		i++;
+	}
 	while (nb)
 	{
 		tmp = nb % 16;
