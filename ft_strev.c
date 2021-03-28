@@ -1,11 +1,11 @@
 
-#include "printf.h"
+#include "ft_printf.h"
 
-char *ft_strev(char *str)
+char	*ft_strev(char *str)
 {
-	char *rev;
-	int i;
-	int j;
+	char	*rev;
+	int	i;
+	int	j;
 
 	i = ft_strlen(str);
 	rev = (char*)malloc(sizeof(char) * (i + 1));

@@ -1,11 +1,11 @@
 
-#include "printf.h"
+#include "ft_printf.h"
 
 char	*ft_straddend(char *str)
 {
-	int i;
-	int j;
-	char *nstr;
+	int	i;
+	int	j;
+	char	*nstr;
 
 	i = ft_strlen(str);
 	j = 0;

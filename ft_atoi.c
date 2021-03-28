@@ -6,7 +6,7 @@
 /*   By: jalves-d <jalves-d@42lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 11:06:56 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/25 13:24:41 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/03/28 13:41:31 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_atoi(const char *str)
 {
 	long int	i;
-	int	negative;
+	int			negative;
 	long int	num;
 
 	num = 0;

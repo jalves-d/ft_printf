@@ -6,13 +6,12 @@
 /*   By: jalves-d <jalves-d@42lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 11:07:33 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/26 14:27:55 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:02:36 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-//this function need convert values long long to string to print
 int	cont(long long nb)
 {
 	int		i;

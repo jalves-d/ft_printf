@@ -1,7 +1,7 @@
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	int i;
 
@@ -16,11 +16,12 @@ void ft_putstr(char *str)
 	}
 }
 
-void ft_init(char *str)
+void	ft_init(char *str)
 {
 	str[0] = 0;
 }
-int ft_printreturn(char *str)
+
+int	ft_printreturn(char *str)
 {
 	int i;
 
@@ -31,7 +32,7 @@ int ft_printreturn(char *str)
 	return (i);
 }
 
-int		checkpercent(char **str, const char *s, va_list list, int i)
+int	checkpercent(char **str, const char *s, va_list list, int i)
 {
 	char *flasmem;
 	char *p;
@@ -40,7 +41,7 @@ int		checkpercent(char **str, const char *s, va_list list, int i)
 	p = *str;
 	flasmem = (char*)malloc(sizeof(char) * 1);
 	ft_init(flasmem);
-	while(ft_checkflag(s[i], "-.*") || ft_isdigit(s[i]))
+	while (ft_checkflag(s[i], "-.*") || ft_isdigit(s[i]))
 	{
 		flasmem = ft_charset(flasmem, s[i]);
 		i++;
@@ -50,13 +51,13 @@ int		checkpercent(char **str, const char *s, va_list list, int i)
 	if (ft_checkflag(s[i], "n"))
 		*va_arg(list, int*) = j;
 	else if (ft_checkflag(s[i], "cspdiuxX%"))
-		*str = ft_strjoin(p, convertfunc(list, s[i], flasmem));	
+		*str = ft_strjoin(p, convertfunc(list, s[i], flasmem));
 	if (flasmem[0] != 0)
 		free(flasmem);
 	return (i);
 }
 
-int		ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
 	va_list list;
 	int i;

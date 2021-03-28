@@ -1,7 +1,7 @@
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int		*ft_intzero(int *str, int i)
+int	*ft_intzero(int *str, int i)
 {
 	while (i >= 0)
 	{
@@ -11,22 +11,22 @@ int		*ft_intzero(int *str, int i)
 	return (str);
 }
 
-void applyprec(char *flags, int i, int *apply)
+void	applyprec(char *flags, int i, int *apply)
 {
-	char *numt;
+	char	*numt;
 
 	numt = (char*)malloc(sizeof(char) * 1);
 	numt[0] = 0;
-	if(flags[i] == '.')
+	if (flags[i] == '.')
 	{
 		apply[3] = 1;
 		i++;
 		if (flags[i] == '*')
-		{
 			apply[4] = -1;
+		if (flags[i] == '*')
 			i++;
-		}
 		else
+		{
 			while (ft_isdigit(flags[i]))
 			{
 				numt = ft_charset(numt, flags[i]);
@@ -34,13 +34,14 @@ void applyprec(char *flags, int i, int *apply)
 			}
 			if (numt[0] != 0)
 				apply[4] = ft_atoi(numt);
+		}
 	}
 	free(numt);
 }
 
-void strapplynums(char *flags, int i, int *apply)
+void	strapplynums(char *flags, int i, int *apply)
 {
-	char *num;
+	char	*num;
 
 	num = (char*)malloc(sizeof(char) * 1);
 	num[0] = 0;
@@ -63,9 +64,9 @@ void strapplynums(char *flags, int i, int *apply)
 	free(num);
 }
 
-void strapplyflags(char *flags, int *apply)
+void	strapplyflags(char *flags, int *apply)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (flags[i] == '0' && flags[i + 1] == '-')
@@ -85,7 +86,7 @@ void strapplyflags(char *flags, int *apply)
 
 int	*ft_na(int *nflags, char *flags, va_list list)
 {
-	int 	i;
+	int	i;
 
 	i = 0;
 	while (i < 5)
