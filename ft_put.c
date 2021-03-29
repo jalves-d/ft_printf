@@ -77,7 +77,11 @@ char	*executionflags(int **isstr, char *str, char s, int *j)
 	if (istr[2] >= 0 && s == 'c' && ft_strlen(str) == 0)
 		*j += swidhtt(istr[2], istr[0]);
 	else if (istr[2] > 0)
+	{
 		str = swidht(istr[2], str, istr[0]);
+		*j += ft_strlen(str);
+	}
+	else 
 		*j += ft_strlen(str);
 	free(istr);
 	return (str);

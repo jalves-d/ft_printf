@@ -14,11 +14,7 @@ char	*ft_itoa(long long nbr);
 char 	*widht(int size, char *str, int left);
 char 	*precisionapply(int size, char *str);
 char	*prapplyig(int size, char *str);
-<<<<<<< HEAD
 char 	*executionflags(int **isstr, char *str, char s, int *j);
-=======
-char 	*executionflags(int **isstr, char *str, char s);
->>>>>>> 540e083ded7f601b37d5b5c45c58dcf88a747e83
 char 	*convertfunc(va_list list, char s, char *flags, int *j);
 char	*ft_puthex(u_int64_t nb, char c);
 char	*ft_straddend(char *str);
