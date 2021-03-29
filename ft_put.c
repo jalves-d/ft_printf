@@ -71,7 +71,7 @@ char	*executionflags(int **isstr, char *str, char s)
 		if (istr[1] == 1 && istr[3] == 0 && istr[0] == 0)
 			if (istr[2] > 0 && istr[2] > ft_strlen(str))
 		   		str = precisionapply(istr[2], str);
-		if (istr[3] == 1 && istr[4] == 0)
+		if (istr[3] == 1 && istr[4] == 0 && str[0] == '0')
 			str = prapply(istr[4], str);
 	}
 	if (istr[2] > 0)
@@ -92,12 +92,12 @@ char	*prtopointer(char *str, int *istr)
 		if (istr[2] > 0 && istr[2] > ft_strlen(str))
 	   		str = precisionapply(istr[2], str);
 	if (istr[3] == 1 && istr[4] == 0)
-		str = prapply(istr[4], str);
+		str = prapplyig(istr[4], str);
 	str = ft_strjoin(ns, str);
 	return (str);
 }
 
-char	*convertfunc(va_list list, char s, char *flags)
+char	*convertfunc(va_list list, char s, char *flags, int *j)
 {
 	char	*str;
 	int	*nflags;
@@ -106,7 +106,7 @@ char	*convertfunc(va_list list, char s, char *flags)
 	nflags = (int*)malloc(sizeof(int) * 5);
 	nflags = ft_na(nflags, flags, list);
 	if (s == 'c')
-		str = ft_charset(str, va_arg(list, int));
+		str = ft_charsett(str, va_arg(list, int), &(*j));
 	else if (s == 's')
 		str = ft_strjoin(str, va_arg(list, char*));
 	else if (s == 'p')
