@@ -7,8 +7,32 @@ char *ft_charset(char *str, char s)
 	char *p;
 
 	i = 0;
-	if (s == '\0')
-		s = 127;
+	if (str != NULL)
+	{
+		p = (char*)malloc(sizeof(char) * (ft_strlen(str) + 2));
+		while(str[i])
+		{
+			p[i] = str[i];
+			i++;
+		}
+	}
+	else
+		p = (char*)malloc(sizeof(char) * 2);
+	p[i] = s;
+	i++;
+	p[i] = 0;
+	free(str);
+	return (p);
+}
+
+char *ft_charsett(char *str, char s, int *j)
+{
+	int i;
+	char *p;
+
+	i = 0;
+	if (s == 0)
+		*j += 1;
 	if (str != NULL)
 	{
 		p = (char*)malloc(sizeof(char) * (ft_strlen(str) + 2));
@@ -47,6 +71,25 @@ char *swidht(int size, char *str, int left)
 	else
 		str = ft_strjoin(p, str);
 	return (str);
+}
+
+int	swidhtt(int size, int left)
+{
+	int i;
+
+	i = 0;
+	if (left)
+		write(1, "\0", 1);
+	while (i < (size - 1))
+	{
+		write(1, " ", 1);
+		i++;
+	}
+	if (!left)
+		write(1, "\0", 1);
+	if (size == 0)
+		return (1);
+	return (size);
 }
 
 char *prapply(int size, char *str)
