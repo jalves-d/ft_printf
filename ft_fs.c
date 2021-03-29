@@ -25,32 +25,6 @@ char *ft_charset(char *str, char s)
 	return (p);
 }
 
-char *ft_charsett(char *str, char s, int *j)
-{
-	int i;
-	char *p;
-
-	i = 0;
-	if (s == 0)
-		*j += 1;
-	if (str != NULL)
-	{
-		p = (char*)malloc(sizeof(char) * (ft_strlen(str) + 2));
-		while(str[i])
-		{
-			p[i] = str[i];
-			i++;
-		}
-	}
-	else
-		p = (char*)malloc(sizeof(char) * 2);
-	p[i] = s;
-	i++;
-	p[i] = 0;
-	free(str);
-	return (p);
-}
-
 char *swidht(int size, char *str, int left)
 {
 	char *p;

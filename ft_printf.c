@@ -19,16 +19,6 @@ void	ft_init(char *str)
 	str[0] = 0;
 }
 
-int	ft_printreturn(char *str, int i)
-{
-
-	i += ft_strlen(str);
-	ft_putstr(str);
-	str = 0;
-	free(str);
-	return (i);
-}
-
 int	checkpercent(const char *s, va_list list, int i, int *h)
 {
 	char *flasmem;
@@ -43,9 +33,8 @@ int	checkpercent(const char *s, va_list list, int i, int *h)
 	if (ft_checkflag(s[i], "n"))
 		*va_arg(list, int*) = *h;
 	else if (ft_checkflag(s[i], "cspdiuxX%"))
-		ft_putstr(convertfunc(list, s[i], flasmem, &(*h)));
-	if (flasmem[0] != 0)
-		free(flasmem);
+		convertfunc(list, s[i], flasmem, &(*h));
+	free(flasmem);
 	return (i);
 }
 

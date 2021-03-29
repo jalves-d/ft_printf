@@ -53,27 +53,17 @@ char	*prapplyig(int size, char *str)
 	return (p);
 }
 
-char	*executionflags(int **isstr, char *str, char s, int *j)
+void	executionflags(int **isstr, char *str, char s, int *j)
 {
 	int *istr;
 
 	istr = *isstr;
 	if (s == '%')
 		str = ft_charset(str, 37);
-	if (s == 's')
-		if (istr[3] == 1 && istr[4] >= 0)
-			str = prapply(istr[4], str);
-	if (s == 'd' || s == 'i' || s == 'x' || s == 'X' || s == 'u' || s == '%')
-	{
-		if (istr[3] == 1 && istr[4] > 0)
-			if (istr[4] >= ft_strlen(str))
-				str = prapplyig(istr[4], str);
-		if (istr[1] == 1 && istr[3] == 0 && istr[0] == 0)
-			if (istr[2] > 0 && istr[2] > ft_strlen(str))
-		   		str = precisionapply(istr[2], str);
-		if (istr[3] == 1 && istr[4] == 0 && str[0] == '0')
-			str = prapply(istr[4], str);
-	}
+	if (s == 's' && istr[3] == 1 && istr[4] >= 0)
+		str = prapply(istr[4], str);
+	if (ft_checkflag(s, "diuxX%"))
+		str = checkpr(str, istr);
 	if (istr[2] >= 0 && s == 'c' && ft_strlen(str) == 0)
 		*j += swidhtt(istr[2], istr[0]);
 	else if (istr[2] > 0)
@@ -83,8 +73,8 @@ char	*executionflags(int **isstr, char *str, char s, int *j)
 	}
 	else 
 		*j += ft_strlen(str);
-	free(istr);
-	return (str);
+	ft_putstr(str);
+	free(str);
 }
 
 char	*prtopointer(char *str, int *istr)
@@ -104,7 +94,7 @@ char	*prtopointer(char *str, int *istr)
 	return (str);
 }
 
-char	*convertfunc(va_list list, char s, char *flags, int *j)
+void	convertfunc(va_list list, char s, char *flags, int *j)
 {
 	char	*str;
 	int	*nflags;
@@ -113,7 +103,7 @@ char	*convertfunc(va_list list, char s, char *flags, int *j)
 	nflags = (int*)malloc(sizeof(int) * 5);
 	nflags = ft_na(nflags, flags, list);
 	if (s == 'c')
-		str = ft_charsett(str, va_arg(list, int), &(*j));
+		str = ft_charset(str, va_arg(list, int));
 	else if (s == 's')
 		str = ft_strjoin(str, va_arg(list, char*));
 	else if (s == 'p')
@@ -126,5 +116,6 @@ char	*convertfunc(va_list list, char s, char *flags, int *j)
 		str = ft_puthex(va_arg(list, unsigned long), 'a');
 	else if (s == 'X')
 		str = ft_puthex(va_arg(list, unsigned long), 'A');
-	return (executionflags(&nflags, str, s, &(*j)));
+	executionflags(&nflags, str, s, &(*j));
+	free(nflags);
 }
