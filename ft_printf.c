@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/30 16:22:06 by jalves-d          #+#    #+#             */
+/*   Updated: 2021/03/30 16:22:43 by jalves-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *str)
+int		ft_putstr(char *str)
 {
 	int i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		write(1, &str[i], 1);
 		i++;
@@ -19,7 +30,7 @@ void	ft_init(char *str)
 	str[0] = 0;
 }
 
-int	checkpercent(const char *s, va_list list, int i, int *h)
+int		checkpercent(const char *s, va_list list, int i, int *h)
 {
 	char *flasmem;
 
@@ -38,11 +49,11 @@ int	checkpercent(const char *s, va_list list, int i, int *h)
 	return (i);
 }
 
-int	ft_printf(const char *s, ...)
+int		ft_printf(const char *s, ...)
 {
 	va_list list;
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
