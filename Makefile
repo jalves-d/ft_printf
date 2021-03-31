@@ -6,7 +6,7 @@
 #    By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/30 16:02:45 by jalves-d          #+#    #+#              #
-#    Updated: 2021/03/30 16:02:55 by jalves-d         ###   ########.fr        #
+#    Updated: 2021/03/31 14:39:11 by jalves-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,8 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 			ar rcs $(NAME) $(OBJS)
+
+bonus:	${NAME}
 
 clean:
 		$(RM) $(OBJS)
