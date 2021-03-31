@@ -6,7 +6,7 @@
 /*   By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:15:03 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/30 16:16:08 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/03/30 19:10:16 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,12 @@ void	strapplyflags(char *flags, int *apply)
 	int	i;
 
 	i = 0;
-	if (flags[i] == '0' && flags[i + 1] == '-')
-		i++;
-	while (flags[i] == '-')
+	while (flags[i] == '-' || flags[i] == '0')
 	{
-		apply[0] = 1;
-		i++;
-	}
-	if (flags[i] == '0')
-	{
-		apply[1] = 1;
+		if (flags[i] == '-')
+			apply[0] = 1;
+		else
+			apply[1] = 1;
 		i++;
 	}
 	strapplynums(flags, i, apply);

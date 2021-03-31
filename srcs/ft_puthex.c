@@ -6,7 +6,7 @@
 /*   By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:08:19 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/30 16:27:52 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/03/31 14:48:49 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ char	*ft_puthex(unsigned long nb, char c)
 	hex = (char*)malloc(sizeof(char) * 17);
 	i = 0;
 	if (nb == 0)
-	{
-		hex[i] = '0';
-		i++;
-	}
+		hex[i++] = '0';
 	while (nb)
 	{
 		tmp = nb % 16;
-		hex[i] = (tmp + (tmp >= 10 ? (c - 10) : '0'));
+		if (tmp >= 10)
+			hex[i] = tmp + (c - 10);
+		else
+			hex[i] = tmp + '0';
 		nb /= 16;
 		i++;
 	}

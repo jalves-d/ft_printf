@@ -6,7 +6,7 @@
 /*   By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:14:21 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/30 16:14:31 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/03/31 13:24:43 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int		swidhtt(int size, int left)
 	return (size);
 }
 
-char	*prapply(int size, char *str)
+char	*ft_prapply(int size, char *str)
 {
 	char	*p;
 	int		i;

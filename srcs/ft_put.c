@@ -6,7 +6,7 @@
 /*   By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:16:44 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/30 16:18:39 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/03/31 13:19:32 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	executionflags(int **isstr, char *str, char s, int *j)
 	if (s == '%')
 		str = ft_charset(str, 37);
 	if (s == 's' && istr[3] == 1 && istr[4] >= 0)
-		str = prapply(istr[4], str);
+		str = ft_prapply(istr[4], str);
 	if (ft_checkflag(s, "diuxX%"))
 		str = checkpr(str, istr);
 	if (istr[2] >= 0 && s == 'c' && ft_strlen(str) == 0)

@@ -6,7 +6,7 @@
 /*   By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:06:21 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/30 16:07:47 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/03/31 13:19:51 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 char			*checkpr(char *str, int *istr)
 {
-	if (istr[3] == 1 && istr[4] > 0)
-		if (istr[4] >= ft_strlen(str))
-			str = prapplyig(istr[4], str);
-	if (istr[1] == 1 && istr[3] == 0 && istr[0] == 0)
-		if (istr[2] > 0 && istr[2] > ft_strlen(str))
-			str = precisionapply(istr[2], str);
-	if (istr[3] == 1 && istr[4] == 0 && str[0] == '0')
-		str = prapply(istr[4], str);
+	if (((istr[4] == 0 && istr[3] == 0) || (istr[3] == 1 && istr[4] < 0)) &&
+			istr[1] == 1 && istr[0] == 0 && istr[2] > ft_strlen(str))
+		str = precisionapply(istr[2], str);
+	else if (istr[3] == 1 && istr[4] > 0 && istr[4] >= ft_strlen(str))
+		str = prapplyig(istr[4], str);
+	else if (istr[3] == 1 && istr[4] == 0 && str[0] == '0')
+		str = ft_prapply(istr[4], str);
 	return (str);
 }
 
