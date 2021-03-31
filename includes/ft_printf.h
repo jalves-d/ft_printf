@@ -6,7 +6,7 @@
 /*   By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 15:55:49 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/30 16:27:47 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/03/31 13:20:23 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 # include <stdarg.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 char			*ft_puthex(unsigned long nb, char c);
 char			*ft_itoa_base(unsigned int n, char *base);
@@ -41,7 +42,7 @@ void			ft_bzero(void *ptr, size_t num);
 char			*ft_charset(char *str, char s);
 char			*swidht(int size, char *str, int left);
 int				swidhtt(int size, int left);
-char			*prapply(int size, char *str);
+char			*ft_prapply(int size, char *str);
 int				*ft_na(int *nflags, char *flags, va_list list);
 
 #endif
