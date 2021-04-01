@@ -6,11 +6,11 @@
 #    By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/30 16:02:45 by jalves-d          #+#    #+#              #
-#    Updated: 2021/03/31 14:39:11 by jalves-d         ###   ########.fr        #
+#    Updated: 2021/04/01 13:28:17 by jalves-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	srcs/ft_atoi.c srcs/ft_bzero.c srcs/ft_checkflag.c  srcs/ft_flags.c srcs/ft_fs.c \
+SRCS	=	srcs/ft_atoi.c srcs/ft_checkflag.c  srcs/ft_flags.c srcs/ft_fs.c \
 			srcs/ft_isdigit.c srcs/ft_itoa.c ft_printf.c srcs/ft_put.c srcs/ft_itoa_base.c \
 			srcs/ft_straddend.c srcs/ft_strdup.c srcs/ft_strev.c srcs/ft_strjoin.c \
 			srcs/ft_strlen.c srcs/ft_puthex.c
