@@ -6,7 +6,7 @@
 /*   By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 15:55:49 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/31 13:20:23 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/04/01 13:14:09 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int				ft_printf(const char *s, ...);
 int				ft_isdigit(int c);
 int				ft_atoi(const char *str);
 int				ft_checkflag(char c, char *cmp);
-void			ft_bzero(void *ptr, size_t num);
 char			*ft_charset(char *str, char s);
 char			*swidht(int size, char *str, int left);
 int				swidhtt(int size, int left);
