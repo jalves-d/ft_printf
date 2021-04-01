@@ -6,7 +6,7 @@
 /*   By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:14:21 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/31 13:24:43 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/04/01 13:19:45 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_charset(char *str, char s)
 	i = 0;
 	if (str != NULL)
 	{
-		p = (char*)malloc(sizeof(char) * (ft_strlen(str) + 2));
+		p = (char *)malloc(sizeof(char) * (ft_strlen(str) + 2));
 		while (str[i])
 		{
 			p[i] = str[i];
@@ -28,7 +28,7 @@ char	*ft_charset(char *str, char s)
 		}
 	}
 	else
-		p = (char*)malloc(sizeof(char) * 2);
+		p = (char *)malloc(sizeof(char) * 2);
 	p[i] = s;
 	i++;
 	p[i] = 0;
@@ -44,7 +44,7 @@ char	*swidht(int size, char *str, int left)
 	i = 0;
 	if (size <= ft_strlen(str))
 		return (str);
-	p = (char*)malloc(sizeof(char) * (size + 1 - ft_strlen(str)));
+	p = (char *)malloc(sizeof(char) * (size + 1 - ft_strlen(str)));
 	while (i < (size - ft_strlen(str)))
 	{
 		p[i] = ' ';
@@ -58,9 +58,9 @@ char	*swidht(int size, char *str, int left)
 	return (str);
 }
 
-int		swidhtt(int size, int left)
+int	swidhtt(int size, int left)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (left)
@@ -85,7 +85,7 @@ char	*ft_prapply(int size, char *str)
 	if (size >= ft_strlen(str))
 		return (str);
 	i = 0;
-	p = (char*)malloc(sizeof(char) * (size + 1));
+	p = (char *)malloc(sizeof(char) * (size + 1));
 	while (i < size)
 	{
 		p[i] = str[i];

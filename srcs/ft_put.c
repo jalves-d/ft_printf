@@ -6,7 +6,7 @@
 /*   By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:16:44 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/31 13:19:32 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/04/01 13:23:41 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*precisionapply(int size, char *str)
 
 	i = -1;
 	check = 0;
-	p = (char*)malloc(sizeof(char) * ((size - ft_strlen(str)) + 1));
+	p = (char *)malloc(sizeof(char) * ((size - ft_strlen(str)) + 1));
 	if (size > ft_strlen(str))
 	{
 		if (str[0] == '-')
@@ -45,7 +45,7 @@ char	*prapplyig(int size, char *str)
 
 	i = -1;
 	check = 0;
-	p = (char*)malloc(sizeof(char) * ((size - ft_strlen(str)) + 1));
+	p = (char *)malloc(sizeof(char) * ((size - ft_strlen(str)) + 1));
 	if (size >= ft_strlen(str))
 	{
 		if (str[0] == '-')
@@ -64,7 +64,7 @@ char	*prapplyig(int size, char *str)
 
 void	executionflags(int **isstr, char *str, char s, int *j)
 {
-	int *istr;
+	int	*istr;
 
 	istr = *isstr;
 	if (s == '%')
@@ -109,12 +109,12 @@ void	convertfunc(va_list list, char s, char *flags, int *j)
 	int		*nflags;
 
 	str = 0;
-	nflags = (int*)malloc(sizeof(int) * 5);
+	nflags = (int *)malloc(sizeof(int) * 5);
 	nflags = ft_na(nflags, flags, list);
 	if (s == 'c')
 		str = ft_charset(str, va_arg(list, int));
 	else if (s == 's')
-		str = ft_strjoin(str, va_arg(list, char*));
+		str = ft_strjoin(str, va_arg(list, char *));
 	else if (s == 'p')
 		str = prtopointer(
 				ft_puthex(((unsigned long)va_arg(list, void*)), 'a'), nflags);

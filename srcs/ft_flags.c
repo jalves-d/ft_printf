@@ -6,13 +6,13 @@
 /*   By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:15:03 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/30 19:10:16 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/04/01 13:17:41 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		*ft_intzero(int *str, int i)
+int	*ft_intzero(int *str, int i)
 {
 	while (i >= 0)
 	{
@@ -26,7 +26,7 @@ void	applyprec(char *flags, int i, int *apply)
 {
 	char	*numt;
 
-	numt = (char*)malloc(sizeof(char) * 1);
+	numt = (char *)malloc(sizeof(char) * 1);
 	numt[0] = 0;
 	if (flags[i] == '.')
 	{
@@ -54,7 +54,7 @@ void	strapplynums(char *flags, int i, int *apply)
 {
 	char	*num;
 
-	num = (char*)malloc(sizeof(char) * 1);
+	num = (char *)malloc(sizeof(char) * 1);
 	num[0] = 0;
 	if (flags[i] == '*')
 	{
@@ -91,7 +91,7 @@ void	strapplyflags(char *flags, int *apply)
 	strapplynums(flags, i, apply);
 }
 
-int		*ft_na(int *nflags, char *flags, va_list list)
+int	*ft_na(int *nflags, char *flags, va_list list)
 {
 	int	i;
 

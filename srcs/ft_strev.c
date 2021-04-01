@@ -6,7 +6,7 @@
 /*   By: jalves-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:05:13 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/30 16:06:10 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/04/01 13:24:30 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strev(char *str)
 	int		j;
 
 	i = ft_strlen(str);
-	rev = (char*)malloc(sizeof(char) * (i + 1));
+	rev = (char *)malloc(sizeof(char) * (i + 1));
 	j = 0;
 	i--;
 	while (i >= 0)

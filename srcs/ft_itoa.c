@@ -6,13 +6,13 @@
 /*   By: jalves-d <jalves-d@42lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 11:07:33 by jalves-d          #+#    #+#             */
-/*   Updated: 2021/03/30 16:08:05 by jalves-d         ###   ########.fr       */
+/*   Updated: 2021/04/01 13:20:30 by jalves-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		cont(long long nb)
+int	cont(long long nb)
 {
 	int		i;
 
@@ -38,7 +38,7 @@ char	*ft_itoa(long long nbr)
 	int		nb;
 
 	nb = cont(nbr);
-	p = (char*)malloc(sizeof(char) * (nb + 1));
+	p = (char *)malloc(sizeof(char) * (nb + 1));
 	if (!p)
 		return (0);
 	p[nb] = '\0';
